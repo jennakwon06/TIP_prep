@@ -1,0 +1,11 @@
+Recursive problem - from beginning to end
+
+1) Detect if a problem is a recursive problem
+- compute the nth..
+- compute the first n...
+- compute all...
+
+2) Come up with a mathematical formula to cover all cases and to express the problem insubproblems
+
+3) Convert the recursive formula to code
+

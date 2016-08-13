@@ -1,0 +1,18 @@
+Common Questions
+
+1. Compute LCA
+    - With parent pointer
+    - Without parent pointer
+
+2. Root-to-node paths
+
+3. Traverse without recursion
+    - With parent pointers in nodes
+    - With stack ( O(n) space here = parent pointers)
+
+4. Reconstruct tree
+    - BST : done with preorder
+    - BT : done with inorder + pick one of any three
+
+5. Visit left then right, then splice the results at root
+    - Check height

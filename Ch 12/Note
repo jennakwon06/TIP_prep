@@ -1,0 +1,22 @@
+Calculating Median
+- When signs are opposite: (H + L) / 2
+- When signs are the same: (H - L) / 2 + L
+
+Binary Search Variants
+1. Dealing with duplicates
+-   find endpoints
+- may turn into linear time complexity, unfortunately.
+2. Find first occurrence of k
+- Worst case: When all elements are k. brute force search at any point wouldn't
+- find any occurrence, and binary search for left endpoint
+3. Find first element greater than k
+- find any occurrence, and binary search for its right endpoint, and return the next indx?
+
+4. Cyclically sorted array
+- compare A[mid] to A[right].
+- duplicates? lienar search.
+
+Generalized Search
+- Tradeoffs between RAM and computation time
+- Randomization for elimination
+- Bit level manipulation to identify missing elements

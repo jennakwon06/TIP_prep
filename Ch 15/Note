@@ -1,0 +1,20 @@
+Common Questions
+
+
+I often get stuck writing recursive helpers because I don't know which arguments will make method clean, and how to effectively
+use return statements.
+- If you are returning this OR that, then use ternary statement directly in return
+- Use outer IF statements if you want to prevent recursion call completely
+
+
+1. Compute LCA
+    - How does this differ with BT?
+
+2. Intervals
+    - Range lookup
+
+3. Linked list to BST
+
+4. Create minimum height tree & reconstruct tree with input array
+    - Use start / end indices directly as function arguments to create "subslicing" effect without using memory
+

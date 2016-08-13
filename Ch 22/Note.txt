@@ -1,0 +1,8 @@
+
+1. Compute the greatest common divisor
+    - GCD(x, y) = GCD(x - y, y) but this is slow
+    - Instead, do CBC analysis
+
+2. Find the first missing positive entry
+    - Write entries to its index then make a pass
+

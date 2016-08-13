@@ -1,0 +1,15 @@
+1) Isolating the lowest (rightmost) that is 1
+y = x & ~(x-1) : y is 1 at exactly the lowest bit of x that is 1
+y = x & (x-1) : lowest bit is turned off
+
+https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetTable
+
+2) Large number of bit fiddling operations
+"Whenever you have to do a large number of operations, two keys to performance are processing multiple
+bits at a time, and caching results in an array-based lookup table".
+
+Caching -> hash table with 2^16 entries = 65536; feasible
+Index into the hash table by rightshifting the original number
+
+3) Operators
+XOR is associative, commutative
