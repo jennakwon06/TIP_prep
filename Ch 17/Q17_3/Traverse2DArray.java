@@ -1,3 +1,5 @@
+package Q17_3;
+
 import library.AssortedMethods;
 
 import java.util.Arrays;
@@ -14,7 +16,7 @@ import java.util.Arrays;
  * Lesson here: Top down is harder to code than bottom up here
  * Backtracking is one way, but it is much slower
  */
-public class Q17_3 {
+public class Traverse2DArray {
 
     public static class Count {
         int count = 0;

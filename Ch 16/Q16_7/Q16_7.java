@@ -1,7 +1,8 @@
+package Q16_7;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class Q16_7 {
     // @include
@@ -40,29 +41,8 @@ public class Q16_7 {
         }
         return true;
     }
-    // @exclude
 
-    private static void checkAns(List<List<String>> vecs, String input) {
-        for (List<String> vec : vecs) {
-            StringBuilder temp = new StringBuilder();
-            for (String s : vec) {
-                assert(isPalindrome(s));
-                temp.append(s);
-            }
-            assert(temp.toString().equals(input));
-        }
-    }
-
-    private static String randString(int len) {
-        Random r = new Random();
-        StringBuilder ret = new StringBuilder(len);
-        while (len-- > 0) {
-            ret.append((char)(r.nextInt(26) + 'a'));
-        }
-        return ret.toString();
-    }
-
-    private static void simpleTest() {
+    public static void main(String[] args) {
         List<List<String>> result = palindromePartitioning("abbbac");
         List<List<String>> golden = Arrays.asList(
                 Arrays.asList("a", "b", "b", "b", "a", "c"),
@@ -70,30 +50,5 @@ public class Q16_7 {
                 Arrays.asList("a", "bb", "b", "a", "c"),
                 Arrays.asList("a", "bbb", "a", "c"), Arrays.asList("abbba", "c"));
         System.out.println(result);
-        assert(result.equals(golden));
-    }
-
-    public static void main(String[] args) {
-        simpleTest();
-//        if (args.length == 1) {
-//            String s = args[0];
-//            List<List<String>> result = palindromePartitioning(s);
-//            checkAns(result, s);
-//            System.out.println("string s = " + s);
-//            for (List<String> vec : result) {
-//                System.out.println(vec);
-//            }
-//        } else {
-//            Random r = new Random();
-//            for (int times = 0; times < 1; ++times) {
-//                String s = randString(r.nextInt(12));
-//                List<List<String>> result = palindromePartitioning(s);
-//                checkAns(result, s);
-//                System.out.println("string s = " + s);
-//                for (List<String> vec : result) {
-//                    System.out.println(vec);
-//                }
-//            }
-//        }
-    }
+        assert(result.equals(golden));    }
 }
