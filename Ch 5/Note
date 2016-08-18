@@ -1,8 +1,11 @@
 1) Isolating the lowest (rightmost) that is 1
 y = x & ~(x-1) : y is 1 at exactly the lowest bit of x that is 1
 y = x & (x-1) : lowest bit is turned off
-
 https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetTable
+Why is this useful?
+    - count the number of 1s in a word by iteratively erasing 1s, instead of visiting every bit
+
+
 
 2) Large number of bit fiddling operations
 "Whenever you have to do a large number of operations, two keys to performance are processing multiple

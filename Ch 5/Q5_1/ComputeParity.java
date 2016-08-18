@@ -65,11 +65,6 @@ public class ComputeParity {
         int w3 = x >> 8 & 0b11111111;
         int w4 = x & 0b11111111;
 
-//        System.out.println(Integer.toBinaryString(w1));
-//        System.out.println(Integer.toBinaryString(w2));
-//        System.out.println(Integer.toBinaryString(w3));
-//        System.out.println(Integer.toBinaryString(w4));
-
         int parity = cache[w1];
         for (int i : new int[]{w2, w3, w4}) {
             parity ^= cache[i];
