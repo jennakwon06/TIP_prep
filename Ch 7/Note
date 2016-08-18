@@ -8,3 +8,12 @@ string concatenation operates in O(n^2) time
 2) Useful string operations
 - Check if something is an arithmetic operator
         - "+-*/".contains(tokekn)
+
+3) Usage of do while
+- do while is executed at least once
+- useful for building strings
+
+
+
+Completed
+- 7.1 ~
