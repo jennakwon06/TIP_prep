@@ -14,18 +14,19 @@ public class DutchNationalFlag {
 
     /**
      * In place quick sort partition
-     * Scan with two pointers
+     * Scan with lo and hi pointers until they cross.
+     * Swap two elements when necessary.
      * NOT stable
-     * DOES NOT WORK WITH DUPLICATES
+     * DOES NOT WORK WITH DUPLICATES. WHY?
      */
-    public static int[] twoWayPartition(int[] arr, int index) {
+    public static int[] twoWayPartitionWrong(int[] arr, int index) {
         int pivot = arr[index];
         int n = arr.length - 1;
 
         swap(arr, n, index); //move pivot out
 
         int lo = 0;
-        int hi = n - 1;
+        int hi = n;
 
         while (lo < hi) {
             if (arr[lo] > pivot && arr[hi] < pivot) {
@@ -49,12 +50,11 @@ public class DutchNationalFlag {
      * In place quick sort partition
      * Scan with one pointer
      * NOT stable
-     * DOES NOT WORK WITH DUPLICATES
+     * Does work with duplicates, but does not group duplicates together.
      */
-    private static int[] twoWayPartition2(int[] arr, int index) {
+    private static int[] twoWayPartitionRight(int[] arr, int index) {
         int pivot = arr[index];
         int n = arr.length - 1;
-
         swap(arr, n, index); //move pivot out
 
         int lo = 0;
@@ -65,22 +65,44 @@ public class DutchNationalFlag {
                 swap(arr, i, lo++);
             }
         }
-
-        swap(arr, lo, hi);
-
+        swap(arr, n, lo);
         return arr;
     }
 
     /**
      * In place
-     * Works with duplicates
-     * @TODO implement
+     * To group equal elements together, you can do 3-way partitioning.
      */
     private static int[] threeWayPartition(int[] arr, int index) {
+        int pivot = arr[index];
+        int n = arr.length - 1;
+
+        swap(arr, n, index);
+        /**
+         * Partition list into four groups
+         * A[0 (inc) to lo (exc)] = smaller
+         * A[lo (inc) to eq (exc)] = equal
+         * A[eq (inc) to hi (exc)] = unclassified
+         * A[hi (inc) to n - 1 (exc)] = larger
+         */
+        int lo = 0;
+        int eq = 0;
+        int hi = n - 1;
+
+        while (eq < hi) { // arr[eq] is an incoming element
+            if (arr[eq] < pivot) {
+                swap(arr, eq++, lo++);
+            } else if (arr[eq] == pivot) {
+                eq++;
+            } else { // arr[lo] > pivot
+                swap(arr, eq, hi--);
+            }
+        }
+
+        swap(arr, n, hi);
+
         return arr;
     }
-
-
 
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
@@ -89,10 +111,15 @@ public class DutchNationalFlag {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{4, 9, 9, 5, 6, 1, 2, 2, 2, 2, 2, 9, 9, 9, 11, 16, 27, 36, 3, 19, 20};
+        int[] arr = new int[]{1, 1, 2, 1, 3, 4, 9, 2, 2, 9, 5, 6, 1, 2, 2, 9, 9, 27, 2, 2, 2, 36, 3};
+        System.out.println(Arrays.toString(twoWayPartitionWrong(arr, 2)));
+        
+        // second arg = index of the pivot
+        int[] arr2 = new int[]{1, 1, 2, 1, 3, 4, 9, 2, 2, 9, 5, 6, 1, 2, 2, 9, 9, 27, 2, 2, 2, 36, 3};
+        System.out.println(Arrays.toString(twoWayPartitionRight(arr2, 2)));
 
-        System.out.println(Arrays.toString(twoWayPartition(arr, 5))); //9, [4, 5, 6, 1, 2, 3, 9, 16, 27, 36, 20, 19, 11]
-        System.out.println(Arrays.toString(twoWayPartition2(arr, 5))); //[4, 5, 6, 1, 2, 3, 9, 16, 27, 36, 20, 19, 11]
+        int[] arr3 = new int[]{1, 1, 2, 1, 3, 4, 9, 2, 2, 9, 5, 6, 1, 2, 2, 9, 9, 27, 2, 2, 2, 36, 3};
+        System.out.println(Arrays.toString(threeWayPartition(arr3, 2)));
 
 
     }
