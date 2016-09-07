@@ -75,8 +75,6 @@ public class Traverse2DArray {
             }
         }
 
-        System.out.println(Arrays.deepToString(memo));
-
         return memo[memo.length - 1][memo[0].length - 1];
 
     }
@@ -153,13 +151,6 @@ public class Traverse2DArray {
 
         intMaze[0][0] = 1;
         intMaze[intMaze.length - 1][intMaze[0].length - 1] = 1;
-
-//        AssortedMethods.printMatrix(intMaze);
-//        double startTime = System.currentTimeMillis();
-//        System.out.println(numAllPaths(intMaze));
-//        double endTime = System.currentTimeMillis();
-//        System.out.println("Total execution time: " + (endTime - startTime) );
-
 
         double startTime = System.currentTimeMillis();
         System.out.println(numAllPathsDP(intMaze));
