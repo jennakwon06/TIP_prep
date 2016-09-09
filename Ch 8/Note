@@ -1,7 +1,12 @@
-Linked List Challenges~
+Problems
 
-1) Reverse recursively <- don't know why this is so hard for me
-2) Do things that are done with arrays with LLs
-   ex) Test palindromicity
+1) How to reverse linked list recursively and iteratively
+
+2) How to do things done with arrays but with LLs
+   ex) Test palindromicity (8.12)
    ex) Rotate (LLs are easy to be cut and subsliced so this should be easy)
    ex) Partition around a pivot
+
+
+Completed
+
